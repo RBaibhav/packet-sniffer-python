@@ -129,7 +129,7 @@ if __name__ == "__main__":
 	print("Testing PacketCapture class...") 
 	
 	capture = PacketCapture()
-	capture.stop_capturing()
+	capture.start_capture()
 
 	print("capturing packet for 10 seconds .... ")
 	time.sleep(10)
@@ -138,10 +138,10 @@ if __name__ == "__main__":
 	print(f"Captured {len(packets)} packets")
 	
 	for packet in packets:
-		print(f"{packet['src_ip']} --> {packet['dst_ip']}  [{packet['protocol']}]  {packet['traffic_type']}")
+		print(f"{packet['src_ip']} --> {packet['dst_ip']}  [{packet['protocol']}]  {packet['traffic_type']} Packet Size [{packet['size']}]")
 
 	
-	capture.start_capture()
+	capture.stop_capturing()
 	print("test Completed!")
     
 		
